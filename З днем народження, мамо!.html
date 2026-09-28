@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>З днем народження, мамо!</title>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#3a1f4d;--ink:#fff1f5;--rose:#ff8fab;--gold:#ffd166;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#5a2d78 0,var(--bg) 60%);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;overflow-x:hidden}
+.flower{font-size:4rem;animation:sway 3s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes sway{50%{transform:rotate(8deg)}}
+h1{font-family:'Marck Script',cursive;font-weight:400;font-size:clamp(3rem,13vw,6rem);line-height:1.05;margin:12px 0 20px;color:var(--rose)}
+p{max-width:34ch;font-size:1.25rem;line-height:1.6;margin:0 0 12px}
+.wish{color:var(--gold);font-weight:800}
+a.btn{display:inline-block;margin-top:28px;background:var(--gold);color:#3a1f4d;font-weight:800;font-size:1.15rem;text-decoration:none;padding:16px 34px;border-radius:999px}
+a.btn:focus-visible,a.btn:hover{outline:3px solid var(--ink);outline-offset:3px}
+.confetti{position:fixed;top:-20px;font-size:1.6rem;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.flower,.confetti{animation:none}.confetti{display:none}}
+.cake{margin:28px 0 8px}
+.candles{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:440px;margin:0 auto 6px}
+.candle{background:none;border:0;font-size:1.35rem;cursor:pointer;padding:2px;line-height:1;transition:transform .2s}
+.age{font-family:'Marck Script',cursive;font-size:clamp(2rem,8vw,3.2rem);color:var(--gold);margin:-6px 0 18px}
+.garden{font-size:2.2rem;letter-spacing:6px;margin:28px 0 4px;max-width:100%}
+.garden span{display:inline-block;animation:sway 3s ease-in-out infinite}
+.garden span:nth-child(even){animation-delay:-1.5s}
+.garden.top{margin:0 0 4px}
+.candle:hover{transform:translateY(-3px)}
+.candle:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.cake-emoji{font-size:5rem;line-height:1}
+.cake-msg{min-height:1.6rem;color:var(--gold);font-weight:800;margin-top:8px}
+.wishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:760px;width:100%;margin:28px 0 8px}
+.wish-card{background:rgba(255,255,255,.08);border:2px dashed var(--rose);border-radius:20px;padding:18px 16px}
+.wish-card:nth-child(even){border-style:solid;border-color:var(--gold);transform:rotate(1deg)}
+.wish-card:nth-child(odd){transform:rotate(-1deg)}
+.wish-card b{display:block;font-family:'Marck Script',cursive;font-weight:400;font-size:1.8rem;color:var(--gold)}
+.wish-card span{font-size:1rem;line-height:1.5}
+.sign{font-family:'Marck Script',cursive;font-size:2rem;color:var(--rose);margin-top:32px}
+.pop{position:fixed;top:-30px;font-size:1.8rem;animation:fall 3.5s ease-in forwards;pointer-events:none;z-index:5}
+</style>
+</head>
+<body>
+<div class="garden top" aria-hidden="true"><span>🌷</span><span>🌸</span><span>🌹</span><span>🌺</span><span>🌻</span></div>
+<h1>З днем народження, мамо!</h1>
+<div class="age">Тобі сьогодні 41! 🌼</div>
+<p>Дякую тобі за тепло, турботу і найсмачніші обіди у світі.</p>
+<p class="wish">Бажаю здоров'я, радості та багато усмішок кожного дня.</p>
+<div class="cake">
+  <div class="candles" id="candles"></div>
+  <div class="cake-emoji" aria-hidden="true">🎂</div>
+  <div class="cake-msg" id="cakeMsg" aria-live="polite">41 свічка — торкайся й задувай!</div>
+</div>
+
+<div class="wishes">
+  <div class="wish-card"><b>Здоров'я</b><span>Щоб сил вистачало на все, що ти любиш, і ще трохи залишалося.</span></div>
+  <div class="wish-card"><b>Радості</b><span>Щоб кожен день дарував привід посміхнутися.</span></div>
+  <div class="wish-card"><b>Тепла</b><span>Щоб вдома завжди було затишно, а поруч були рідні люди.</span></div>
+  <div class="wish-card"><b>Часу для себе</b><span>Щоб знаходилась хвилинка на каву, квіти і відпочинок.</span></div>
+  <div class="wish-card"><b>Краси</b><span>Щоб дзеркало щоранку казало тобі, яка ти гарна. Бо так і є.</span></div>
+  <div class="wish-card"><b>Мрій</b><span>Щоб усе, про що ти мрієш, збувалося, і навіть трохи швидше.</span></div>
+  <div class="wish-card"><b>Подорожей</b><span>Щоб було багато нових місць, вражень і гарних світлин.</span></div>
+  <div class="wish-card"><b>Любові</b><span>Щоб тебе любили так, як ти любиш нас, — від усього серця.</span></div>
+</div>
+<div class="garden" aria-hidden="true"><span>🌼</span><span>🌷</span><span>💐</span><span>🌸</span><span>🌹</span><span>🌺</span><span>🌻</span></div>
+
+<p>А щоб сьогодні не думати, що готувати, — крутни колесо фортуни!</p>
+<a class="btn" href="https://claude.ai/artifact/LJWdk3uN4MpAf43vZQTxQ4" target="_blank" rel="noopener">Що сьогодні на вечерю?</a>
+<div class="sign">Люблю тебе, мамо ❤️</div>
+<script>
+const em=['🎈','🎉','🌸','✨','💛','🌷','🌹','🌻','🌼'];
+for(let i=0;i<14;i++){const s=document.createElement('span');s.className='confetti';s.setAttribute('aria-hidden','true');
+s.textContent=em[i%em.length];s.style.left=(i*7.3+2)+'%';s.style.animationDuration=(7+(i%5)*2)+'s';s.style.animationDelay=(-i*1.3)+'s';document.body.appendChild(s)}
+const box=document.getElementById('candles'),msg=document.getElementById('cakeMsg');let lit=41;
+function burst(){const list=['🎉','🎈','🌷','✨','💛','🎊'];
+  for(let i=0;i<30;i++){const p=document.createElement('span');p.className='pop';p.setAttribute('aria-hidden','true');
+  p.textContent=list[i%list.length];p.style.left=(Math.random()*95)+'%';p.style.animationDelay=(Math.random()*1.2)+'s';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),5500)}}
+for(let i=0;i<41;i++){const b=document.createElement('button');b.className='candle';b.textContent='🕯️';b.setAttribute('aria-label','Задути свічку '+(i+1));
+  b.onclick=()=>{if(b.dataset.out)return;b.dataset.out=1;b.textContent='💨';lit--;
+    if(lit===0){msg.textContent='Загадуй бажання! З днем народження! 🎉';burst()}else{msg.textContent='Ще свічок: '+lit}};
+  box.appendChild(b)}
+</script>
+</body>
+</html>
